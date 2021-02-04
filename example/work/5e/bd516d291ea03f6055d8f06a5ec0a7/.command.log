@@ -1,0 +1,4 @@
+/bin/bash: /opt/miniconda3/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+AnnData object with n_obs × n_vars = 100 × 29 
+    obs: 'n_genes', 'percent_mito', 'n_counts'
+    var: 'n_cells', 'highly_variable', 'means', 'dispersions', 'dispersions_norm'

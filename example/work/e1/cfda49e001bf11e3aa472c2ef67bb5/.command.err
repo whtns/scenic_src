@@ -1,0 +1,17 @@
+
+2021-02-04 20:53:27,493 - pyscenic.cli.pyscenic - INFO - Creating modules.
+
+2021-02-04 20:53:27,496 - pyscenic.cli.pyscenic - INFO - Loading expression matrix.
+
+2021-02-04 20:53:27,500 - pyscenic.utils - INFO - Calculating Pearson correlations.
+
+2021-02-04 20:53:27,500 - pyscenic.utils - WARNING - Note on correlation calculation: the default behaviour for calculating the correlations has changed after pySCENIC verion 0.9.16. Previously, the default was to calculate the correlation between a TF and target gene using only cells with non-zero expression values (mask_dropouts=True). The current default is now to use all cells to match the behavior of the R verision of SCENIC. The original settings can be retained by setting 'rho_mask_dropouts=True' in the modules_from_adjacencies function, or '--mask_dropouts' from the CLI.
+	Dropout masking is currently set to [False].
+
+2021-02-04 20:53:27,510 - pyscenic.utils - INFO - Creating modules.
+
+2021-02-04 20:53:28,088 - pyscenic.cli.pyscenic - INFO - Loading databases.
+
+2021-02-04 20:53:28,088 - pyscenic.cli.pyscenic - INFO - Calculating regulons.
+
+2021-02-04 20:53:46,229 - pyscenic.cli.pyscenic - INFO - Writing results to file.

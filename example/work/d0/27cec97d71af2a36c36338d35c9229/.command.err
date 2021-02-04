@@ -1,0 +1,17 @@
+Loaded expression matrix of 100 cells and 187 genes in 0.0034842491149902344 seconds...
+Loaded 1 TFs...
+/opt/venv/lib/python3.7/site-packages/arboreto/algo.py:214: FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.
+  expression_matrix = expression_data.as_matrix()
+starting grnboost2 using 6 processes...
+  0%|          | 0/187 [00:00<?, ?it/s]'infer_data failed for target BRF1' Retry (1/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (2/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (3/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (4/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (5/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (6/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (7/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (8/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (9/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+'infer_data failed for target BRF1' Retry (10/10). Failure caused by ValueError("Regression for target gene BRF1 failed. Cause ValueError('Found array with 0 feature(s) (shape=(100, 0)) while a minimum of 1 is required.').").
+ 15%|█▍        | 28/187 [00:00<00:00, 270.69it/s] 43%|████▎     | 81/187 [00:00<00:00, 316.63it/s] 70%|██████▉   | 130/187 [00:00<00:00, 352.78it/s] 95%|█████████▌| 178/187 [00:00<00:00, 381.49it/s]100%|██████████| 187/187 [00:00<00:00, 437.65it/s]
+Done in 0.6088016033172607 seconds.

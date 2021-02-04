@@ -1,0 +1,8 @@
+
+2021-02-04 20:53:51,952 - pyscenic.cli.pyscenic - INFO - Loading expression matrix.
+
+2021-02-04 20:53:51,955 - pyscenic.cli.pyscenic - INFO - Loading gene signatures.
+
+2021-02-04 20:53:51,969 - pyscenic.cli.pyscenic - INFO - Calculating cellular enrichment.
+
+2021-02-04 20:53:53,886 - pyscenic.cli.pyscenic - INFO - Writing results to file.

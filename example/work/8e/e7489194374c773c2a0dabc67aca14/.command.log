@@ -1,0 +1,7 @@
+/bin/bash: /opt/miniconda3/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+AnnData object with n_obs × n_vars = 100 × 200 
+Number of counts (in the dataset units) per gene: 1.0  -  1878.0
+Number of cells in which each gene is detected: 1  -  100
+minCountsPerGene:  3.0
+minSamples:  1.0
+scanpy==1.4.4.post1 anndata==0.6.22.post1 umap==0.3.10 numpy==1.17.2 scipy==1.3.1 pandas==0.25.1 scikit-learn==0.21.3 statsmodels==0.10.1 python-igraph==0.7.1 louvain==0.6.1

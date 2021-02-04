@@ -1,0 +1,2 @@
+/home/skevin/.nextflow/assets/aertslab/SCENICprotocol/bin/integrateOutput.py:35: FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.
+  arr_ip = [tuple(i) for i in df.as_matrix()]

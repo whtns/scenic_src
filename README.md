@@ -10,8 +10,7 @@ A helper script, `run_scenic.sh` is included to ease execution of the nextflow p
 1. navigate to project directory
 1. clone this repository into the `src` subdirectory
 `git clone https://github.com/whtns/scenic_src.git`
-1. open `convert_seu_to_loom.R` and modify as needed to convert a desired seurat object to a loom file stored at  `output/scenic/<dataset>.loom` where <dataset> refers to some unique name for the analysis, ex. 'unfiltered'
-2. run `run_scenic.sh` with a command-line argument matching the value of <dataset>
+1. run `run_scenic.sh` with a command-line argument indicating the path to the desired seurat object 
 `bash run_scenic.sh unfiltered`
-3. open the jupyter notebook `scenic_downstream_analysis.ipynb` in [jupyter lab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) located on the srt server at `cobrinik-srt.la.ad.chla.org:8888` and modify as needed to explore common regulons. modify paths as needed to load `output/scenic/<dataset>-final.loom 
+1. open the jupyter notebook `scenic_downstream_analysis.ipynb` in [jupyter lab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) located on the srt server at `cobrinik-srt.la.ad.chla.org:8888` and modify as needed to explore common regulons. modify paths as needed to load `output/scenic/<dataset>-final.loom 
 
