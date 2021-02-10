@@ -9,7 +9,8 @@ if (length(args)==0) {
 }
 
 library(seuratTools)
-library(sceasy)
+library(SeuratDisk)
+# library(sceasy)
 library(reticulate)
 library(fs)
 
@@ -22,20 +23,25 @@ seu_path <- args[1]
 dataset <- fs::path(seu_path)
 
 adata_path <- gsub("seurat", "scenic", path_ext_set(seu_path, "h5ad"))
-loom_path <- gsub("seurat", "scenic", path_ext_set(seu_path, "loom"))
+h5seurat_path <- path_ext_set(adata_path, "h5seurat")
+loom_path <- path_ext_set(adata_path, "loom")
 # print(dataset)
 
 seu <- readRDS(seu_path)
 
 # kept_metadata <- c("nCount_RNA", "nFeature_RNA", "sample_id")
-#
+
 # kept_metadata <- c("nCount_RNA", "nFeature_RNA", "sample_id", "batch",
 #   "integrated_snn_res.0.2", "integrated_snn_res.0.4", "integrated_snn_res.0.6", "integrated_snn_res.0.8",
 #   "integrated_snn_res.1.2", "integrated_snn_res.1.4", "integrated_snn_res.1.6",
 #   "integrated_snn_res.1.8", "integrated_snn_res.2", "integrated_snn_res.1",
-#   "S.Score", "G2M.Score", "Phase")
-#
+#   "S.Score", "G2M.Score", "Phase", "group_names_1.6")
+# 
 # seu@meta.data <- seu@meta.data[,kept_metadata]
+
+# na_cols <- purrr::map_lgl(seu@meta.data, ~any(is.na(.x)))
+# 
+# seu@meta.data <- seu@meta.data[!na_cols]
 
 for(j in 1:ncol(seu@meta.data)){
     if(is.factor(seu@meta.data[,j]) == T){
@@ -49,10 +55,16 @@ for(j in 1:ncol(seu@meta.data)){
 
 message("converting")
 
-seu <- Seurat::RenameAssays(seu, gene = "RNA")
+# seu <- Seurat::RenameAssays(seu, gene = "RNA")
 
-sceasy::convertFormat(seu, from="seurat", to="anndata",
-                      outFile=adata_path)
+seu@misc <- list(NULL)
+
+SaveH5Seurat(seu, h5seurat_path, overwrite = TRUE)
+
+SeuratDisk::Convert(h5seurat_path, dest = "h5ad", assay = "gene", overwrite = TRUE)
+
+# sceasy::convertFormat(seu, from="seurat", to="anndata",
+#                       outFile=adata_path)
 
 adata <- scanpy$read(adata_path)
 adata$write_loom(loom_path)
