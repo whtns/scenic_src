@@ -3,8 +3,10 @@ set -e -o pipefail
 
 seu_path=`readlink -f $1`
 
+script_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 output_dir=$( cd "$(dirname $(dirname "$seu_path"))" ; pwd -P )
 
+echo $parent_path
 echo $seu_path
 echo $output_dir
 
@@ -16,11 +18,11 @@ output_loom=`echo $dataset-final.loom`
 output_loom_path=`realpath $output_dir/scenic/$output_loom`
 
 
-# # Rscript "$script_path"/convert_seu_to_loom_scenic.R $seu_path
+Rscript "$script_path"/convert_seu_to_loom_scenic.R $seu_path
 
 echo "$input_loom_path"
 echo "$output_loom_path"
- 
+
 nextflow run aertslab/SCENICprotocol \
         -profile docker \
         --loom_input "$input_loom_path" \
@@ -29,7 +31,6 @@ nextflow run aertslab/SCENICprotocol \
         --motifs ~/Homo_sapiens/scenic/motifs-v9-nr.hgnc.tbl \
         --db ~/Homo_sapiens/scenic/hg38_refseq-10kb_up_and_down_tss.mc9nr.feather \
         --thr_min_genes 1
-
 
 # # for testing file paths and script
 # nextflow run aertslab/SCENICprotocol \
@@ -40,6 +41,4 @@ nextflow run aertslab/SCENICprotocol \
 #     --motifs src/scenic_src/example/motifs.tbl \
 #     --db src/scenic_src/example/*feather \
 #     --thr_min_genes 1
-# 
-# 
-# cp $output_loom $output_loom_path
+
