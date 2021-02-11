@@ -17,6 +17,9 @@ echo "$output_loom_path"
 
 Rscript "$script_path"/convert_seu_to_loom_scenic.R $seu_path
 
+echo "$input_loom_path"
+echo "$output_loom_path"
+
 nextflow run aertslab/SCENICprotocol \
         -profile docker \
         --loom_input "$input_loom_path" \
