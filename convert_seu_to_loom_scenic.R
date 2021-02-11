@@ -61,6 +61,8 @@ seu@misc <- list(NULL)
 
 seu <- Seurat::DietSeurat(seu, assays = "gene", dimreducs = c("pca", "tsne", "umap"))
 
+seu <- Seurat::UpdateSeuratObject(seu)
+
 SaveH5Seurat(seu, h5seurat_path, overwrite = TRUE)
 
 SeuratDisk::Convert(h5seurat_path, dest = "h5ad", assay = "gene", overwrite = TRUE)
