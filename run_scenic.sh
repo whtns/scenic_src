@@ -42,3 +42,13 @@ nextflow run aertslab/SCENICprotocol \
 #     --db src/scenic_src/example/*feather \
 #     --thr_min_genes 1
 
+tmux_session=`tmux display-message -p "#S"`
+echo $tmux_session
+if [ $? == 1 ]
+then
+    echo -e "Subject:failure\n$tmux_sesssion" | sendmail -t kevin.stachelek@gmail.com
+else
+    echo -e "Subject:success!\n$tmux_session" | sendmail -t kevin.stachelek@gmail.com
+fi
+
+
