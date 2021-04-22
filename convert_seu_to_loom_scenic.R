@@ -59,6 +59,10 @@ message("converting")
 
 seu@misc <- list(NULL)
 
+seu <- Seurat::DietSeurat(seu, assays = "gene", dimreducs = c("pca", "tsne", "umap"))
+
+seu <- Seurat::UpdateSeuratObject(seu)
+
 SaveH5Seurat(seu, h5seurat_path, overwrite = TRUE)
 
 SeuratDisk::Convert(h5seurat_path, dest = "h5ad", assay = "gene", overwrite = TRUE)
@@ -67,4 +71,8 @@ SeuratDisk::Convert(h5seurat_path, dest = "h5ad", assay = "gene", overwrite = TR
 #                       outFile=adata_path)
 
 adata <- scanpy$read(adata_path)
+# py_del_attr(adata, "uns")
+# scanpy$pp$filter_cells(adata, min_genes=200)
+# scanpy$pp$filter_genes(adata, min_cells=3)
+# 
 adata$write_loom(loom_path)
